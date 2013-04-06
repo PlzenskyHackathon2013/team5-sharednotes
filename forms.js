@@ -23,7 +23,8 @@ exports.registration = function(req, res){
     var email = req.param('email', null);         
      
     global.models.isUserExists(login, function (userExits) {
-        if ((userExits)) {
+        console.log(userExits)
+        if (!userExits) {
             global.models.createUser(login, email, passHash(pass));
             res.send('user created')
         }
@@ -37,7 +38,7 @@ exports.createTask = function (req, res) {
     var name = req.param('name', null);
     var desc = req.param('desc', null);
     
-    global.models.createTask(global.userId, name, desc)
+    global.models.createTask(req.session.userId, name, desc)
     res.send('task created')
 }
 
