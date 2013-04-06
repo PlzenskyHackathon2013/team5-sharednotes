@@ -2,7 +2,7 @@ var mongo = require("mongojs");
 collections = ["users", "tasks"];
 var db = new mongo.connect("mongodb://localhost:27017/test", collections);
 
-export.createUser = function(username, email, password){
+exports.createUser = function(username, email, password){
     db.users.insert({
          username: username,
          email: email,
@@ -10,33 +10,33 @@ export.createUser = function(username, email, password){
     });
 }
 
-export.userAuth = function(username, password, callback){
+exports.userAuth = function(username, password, callback){
     db.users.findOne({
         username: username,
         password: password,
     },
-    export.(err, user) {
+   function (err, user) {
         callback(user["_id"]);
     });
 }
 
-export.getTaskByUser = function(userId, callback){
+exports.getTaskByUser = function(userId, callback){
     db.tasks.find({
         user_id: userId,
     },
-    export.(err, tasks) {
+   function (err, tasks) {
         callback(tasks);
     });
 }
 
-export.isUserExists = function(username, callback) {
-    db.users.count({username: username}, export.(err, count){
+exports.isUserExists = function(username, callback) {
+    db.users.count({username: username},function (err, count){
         if(count) callback(true);
         else callback(false);    
     });
 }
 
-export.createTask = function(user_id, title, description){
+exports.createTask = function(user_id, title, description){
     db.tasks.insert({
          user_id: user_id,
          title: title,
@@ -44,7 +44,7 @@ export.createTask = function(user_id, title, description){
     });
 }
 
-export.updateTask = function(task_id, title, description){
+exports.updateTask = function(task_id, title, description){
     db.tasks.update({
         _id: task_id,
     },
@@ -53,18 +53,18 @@ export.updateTask = function(task_id, title, description){
         description: description,
     });
 }
-export.getUser = function(user_id, callback) {
+exports.getUser = function(user_id, callback) {
     db.users.findOne({_id:user_id}, function(err, user){
         callback(user);
     });
 }
 
-export.getMailByUser = function(user_id, callback){
-    getUser(user_id, export.(user) {callback(user["email"]);});
+exports.getMailByUser = function(user_id, callback){
+    getUser(user_id,function (user) {callback(user["email"]);});
 }
 
-export.getNameByUser = function(user_id, callback){
-    getUser(user_id, export.(user) {callback(user["username"]);});
+exports.getNameByUser = function(user_id, callback){
+    getUser(user_id,function (user) {callback(user["username"]);});
 }
 
 if (require.main === module){
