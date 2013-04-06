@@ -13,7 +13,7 @@ exports.create = function(req, res){
 exports.show = function(req, res){
     res.send('show task ' + req.params.task);
       
-    global.modules.getTaskByUser(request.session.userId, function(tasks) {
+    global.modules.getTaskByUser(req.session.userId, function(tasks) {
         for(var i =0; i < tasks.length; i ++) {
             console.log(tasks[i]);
         } 
