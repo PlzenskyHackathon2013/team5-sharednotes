@@ -1,6 +1,4 @@
-var mongo = require("mongojs");
-collections = ["users", "tasks"];
-var db = new mongo.connect("mongodb://localhost:27017/test", collections);
+var db = require("./db").db;
 
 exports.createUser = function(username, email, password){
     db.users.insert({

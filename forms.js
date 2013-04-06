@@ -24,13 +24,8 @@ exports.registration = function(req, res){
      
     global.models.isUserExists(login, function (userExits) {
         if ((userExits)) {
-            
-            if (global.models.createUser(login, mail, passHash(pass))) {
-                res.send('user created')
-            }
-            else {
-                res.send('some error')
-            }
+            global.models.createUser(login, email, passHash(pass));
+            res.send('user created')
         }
         else {
             res.send('username is allready used, pls select other login');
@@ -42,12 +37,8 @@ exports.createTask = function (req, res) {
     var name = req.param('name', null);
     var desc = req.param('desc', null);
     
-    if (global.models.createTask(global.userId, name, desc)) {
-        res.send('task created')
-    }
-    else {
-        res.send('some error')
-    }
+    global.models.createTask(global.userId, name, desc)
+    res.send('task created')
 }
 
 function passHash(pass) {
