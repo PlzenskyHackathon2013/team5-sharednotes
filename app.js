@@ -6,7 +6,7 @@ var express = require('express')
 , routes = require('./routes')
 , forms = require('./forms')
 , mails = require('./mails')
-//, models = require('models')
+, models = require('models')
 //  , user = require('./routes/user')
 , http = require('http')
 , path = require('path')
@@ -14,6 +14,7 @@ var express = require('express')
 
 var app = express();
 
+global.models = models
 
 // all environments
 app.set('port', process.env.PORT || 3000);
