@@ -2,18 +2,19 @@ exports.login = function(req, res){
     var pass = req.param('pass', null);
     var login = req.param('login', null);          
      
-    var userId = global.models.userAuth(login, passHash(pass))
-    global.userId = userId;
-    req.session.userId = userId;
+    global.models.userAuth(login, passHash(pass), function(userId){
+        req.session.userId = userId;
      
-    if (userId) {
-        //ok
-        res.send('login ok. user id is' + userId);
-    }
-    else {
-        //not ok
-        res.send('login failed');
-    }
+        console.log(userId);
+        if (userId) {
+            //ok
+            res.send('login ok. user id is' + userId);
+        }
+        else {
+            //not ok
+            res.send('login failed');
+        }
+    });
 };
 
 exports.registration = function(req, res){
