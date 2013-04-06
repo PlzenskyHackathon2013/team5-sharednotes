@@ -1,2 +1,36 @@
 h1= title
 p Welcome to #{title}
+
+p register 4 free *
+form(action='/registration',method='post')
+        label(for='email') email
+           input(id='email',type='text',value='',placeholder='@',name='email')
+        label(for='login') login
+           input(id='login',type='text',value='',name='login')
+        label(for='pass') pass
+           input(id='pass',type='pass',value='',name='pass')
+
+        input(type='submit',value='Register me NOW!',data-transition='fade', data-theme='c')
+
+<br />
+p login and share your tasks
+form(action='/login',method='post')
+        label(for='login') login
+           input(id='login',type='text',value='',name='login')
+        label(for='pass') pass
+           input(id='pass',type='pass',value='',name='pass')
+
+        input(type='submit',value='Sign Up',data-transition='fade', data-theme='c')
+
+<br />
+p task add form - for current user
+form(action='/createtask',method='post')
+        label(for='name') name
+           input(id='name',type='text',value='',name='name')
+        label(for='desc') pass
+           input(id='desc',type='text',value='',name='desc')
+
+        input(type='submit',value='create task',data-transition='fade', data-theme='c')
+
+
+* monthly fee is only $5.99
