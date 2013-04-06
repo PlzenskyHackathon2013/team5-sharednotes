@@ -23,5 +23,5 @@ exports.update = function(req, res){
 };
 
 exports.destroy = function(req, res){
-	  res.send('destroy forum ' + req.params.forum);
+	  res.send('destroy task ' + req.params.task);
 };
