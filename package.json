@@ -8,7 +8,7 @@
     , "express-namespace": ">= 0.1.0"
     , "express-resource": ">= 0.0.1"
     , "nodemailer": "0.3.29"
-    , "mongo": "~0.1.0"
+    , "mongojs": "~0.1.0"
   },
   "main": "app.js"
 }
