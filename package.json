@@ -7,5 +7,6 @@
     , "jade": ">= 0.0.1"
     , "express-namespace": ">= 0.1.0"
     , "express-resource": ">= 0.0.1"
-  }
+  },
+  "main": "app.js"
 }
