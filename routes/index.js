@@ -4,10 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'SharedTasks' })
+  res.render('index', { title: 'Express' })
 };
 
-
-exports.foo = function(req, res){
-    res.render('foo', { title: 'foo' })
-};
+//exports.task = require('./task'); 
