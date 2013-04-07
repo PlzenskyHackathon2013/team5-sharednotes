@@ -8,4 +8,5 @@ database = "sharednotes";
 */
 //url = "mongodb://"+user+":"+password+"@"+host+":"+port+"/"+database;
 url = "mongodb://localhost/test";
+url = process.env.OPENSHIFT_MONGODB_DB_URL || url;
 exports.db = mongo.db(url);
