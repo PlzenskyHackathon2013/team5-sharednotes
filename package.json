@@ -1,14 +1,14 @@
 {
-    "name": "sharedNotes"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "3.1.1"
-    , "jade": ">= 0.0.1"
-    , "express-namespace": ">= 0.1.0"
-    , "express-resource": ">= 0.0.1"
-    , "nodemailer": "0.3.29"
-    , "mongojs": "~0.1.0"
+  "name": "sharedNotes",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.1.1",
+    "jade": ">= 0.0.1",
+    "express-namespace": ">= 0.1.0",
+    "express-resource": ">= 0.0.1",
+    "nodemailer": "0.3.29",
+    "mongoskin": "~0.5.0"
   },
   "main": "app.js"
 }
